@@ -1,6 +1,17 @@
-/Symfony/web/bundles/
+# Bootstrap
 /Symfony/app/bootstrap*
+
+# Symfony directories
+/Symfony/web/bundles/
 /Symfony/app/cache/*
 /Symfony/app/logs/*
 /Symfony/vendor/
+
+# Configuration files
 /Symfony/app/config/parameters.yml
+
+# Composer
+/Symfony/composer.phar
+
+# Custom contents
+/Symfony/web/uploads/*
