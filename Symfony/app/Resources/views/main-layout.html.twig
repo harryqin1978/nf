@@ -1,0 +1,15 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+  <link href="{{ asset('css/main-layout.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+  {{ include('::main-navbar.html.twig') }}
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+
+{% endblock %}
