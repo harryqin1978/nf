@@ -1,0 +1,4 @@
+nf_user:
+    resource: "@NFUserBundle/Resources/config/routing.yml"
+    prefix:   /
+

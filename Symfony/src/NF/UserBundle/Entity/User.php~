@@ -1,0 +1,38 @@
+<?php
+namespace NF\UserBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="user")
+ */
+class User
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    protected $passwordHash;
+
+    /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    protected $email;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    protected $isActive;
+}

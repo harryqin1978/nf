@@ -11,6 +11,8 @@ use Acme\DemoBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
+use NF\UserBundle\Entity\User;
+
 class DemoController extends Controller
 {
     /**
@@ -28,6 +30,17 @@ class DemoController extends Controller
      */
     public function helloAction($name)
     {
+
+        $user = new User();
+        $user->setName('A Foo Bar');
+        $user->setPasswordHash('19.99abcde');
+        $user->setEmail('dsaa@126.com');
+        $user->setIsActive(true);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($user);
+        $em->flush();
+
         return array(
             'page_title' => 'Demo hello',
             'name' => $name
