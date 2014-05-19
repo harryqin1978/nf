@@ -12,6 +12,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 use NF\UserBundle\Entity\User;
+use NF\CommerceBundle\Entity\Order;
 
 class DemoController extends Controller
 {
@@ -32,17 +33,24 @@ class DemoController extends Controller
     {
 
         $user = new User();
-        $user->setName('A Foo Bar');
-        $user->setPasswordHash('19.99abcde');
-        $user->setEmail('dsaa@126.com');
+        $user->setName('a');
+        $user->setPasswordHash('b');
+        $user->setEmail('c@126.com');
         $user->setIsActive(true);
+
+        $order = new Order();
+        $order->setReceiveName('Foo');
+        $order->setPrice(19.99);
+        // relate this order to the user
+        $order->setUser($user);
 
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
+        $em->persist($order);
         $em->flush();
 
         return array(
-            'page_title' => 'Demo hello',
+            'page_title' => 'Demo hello ' . $user->getId() . ' ' . $order->getId(),
             'name' => $name
         );
     }

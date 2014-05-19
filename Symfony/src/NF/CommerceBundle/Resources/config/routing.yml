@@ -1,0 +1,3 @@
+# nf_commerce_homepage:
+#     pattern:  /hello/{name}
+#     defaults: { _controller: NFCommerceBundle:Default:index }

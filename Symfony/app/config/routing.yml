@@ -1,3 +1,7 @@
+nf_commerce:
+    resource: "@NFCommerceBundle/Resources/config/routing.yml"
+    prefix:   /
+
 nf_user:
     resource: "@NFUserBundle/Resources/config/routing.yml"
     prefix:   /

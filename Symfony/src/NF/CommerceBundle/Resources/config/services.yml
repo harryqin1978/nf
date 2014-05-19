@@ -1,0 +1,7 @@
+parameters:
+#    nf_commerce.example.class: NF\CommerceBundle\Example
+
+services:
+#    nf_commerce.example:
+#        class: %nf_commerce.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

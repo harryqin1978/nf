@@ -2,13 +2,19 @@
 namespace NF\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="user")
+ * @ORM\Table(name="nf_user")
  */
 class User
 {
+    /**
+     * @ORM\OneToMany(targetEntity="\NF\CommerceBundle\Entity\Order", mappedBy="user")
+     */
+    protected $orders;
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -36,6 +42,11 @@ class User
      */
     protected $isActive;
 
+    public function __construct()
+    {
+        $this->orders = new ArrayCollection();
+    }
+    
     /**
      * Get id
      *
@@ -136,5 +147,38 @@ class User
     public function getIsActive()
     {
         return $this->isActive;
+    }
+
+    /**
+     * Add orders
+     *
+     * @param \NF\CommerceBundle\Entity\Order $orders
+     * @return User
+     */
+    public function addOrder(\NF\CommerceBundle\Entity\Order $orders)
+    {
+        $this->orders[] = $orders;
+
+        return $this;
+    }
+
+    /**
+     * Remove orders
+     *
+     * @param \NF\CommerceBundle\Entity\Order $orders
+     */
+    public function removeOrder(\NF\CommerceBundle\Entity\Order $orders)
+    {
+        $this->orders->removeElement($orders);
+    }
+
+    /**
+     * Get orders
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getOrders()
+    {
+        return $this->orders;
     }
 }
