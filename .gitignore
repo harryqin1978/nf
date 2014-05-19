@@ -20,5 +20,4 @@
 /Symfony/bin/
 
 # Symfony backup files
-
-/Symfony/src/*.php~
+/Symfony/src/*/*/Entity/*.php~
