@@ -32,25 +32,28 @@ class DemoController extends Controller
     public function helloAction($name)
     {
 
-        $user = new User();
-        $user->setName('a');
-        $user->setPasswordHash('b');
-        $user->setEmail('c@126.com');
-        $user->setIsActive(true);
+        // print_r($this->get('request'));
 
-        $order = new Order();
-        $order->setReceiveName('Foo');
-        $order->setPrice(19.99);
-        // relate this order to the user
-        $order->setUser($user);
+        // $user = new User();
+        // $user->setName('a');
+        // $user->setPasswordHash('b');
+        // $user->setEmail('c@126.com');
+        // $user->setIsActive(true);
 
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($user);
-        $em->persist($order);
-        $em->flush();
+        // $order = new Order();
+        // $order->setReceiveName('Foo');
+        // $order->setPrice(19.99);
+        // // relate this order to the user
+        // $order->setUser($user);
+
+        // $em = $this->getDoctrine()->getManager();
+        // $em->persist($user);
+        // $em->persist($order);
+        // $em->flush();
 
         return array(
-            'page_title' => 'Demo hello ' . $user->getId() . ' ' . $order->getId(),
+            // 'page_title' => 'Demo hello ' . $user->getId() . ' ' . $order->getId(),
+            'page_title' => 'Demo hello',
             'name' => $name
         );
     }

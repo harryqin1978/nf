@@ -1,3 +1,7 @@
 # nf_commerce_homepage:
 #     pattern:  /hello/{name}
 #     defaults: { _controller: NFCommerceBundle:Default:index }
+
+nf_commerce_dashboard:
+    path:     /commerce/dashboard
+    defaults: { _controller: NFCommerceBundle:Dashboard:index }
