@@ -1,17 +1,22 @@
 security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
+        NF\UserBundle\Entity\User:
+            algorithm:        plaintext
+            iterations:       1
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
-        in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+        chain_provider:
+            chain:
+                providers: [db_user]
+        db_user:
+            entity:
+                class: NF\UserBundle\Entity\User
+                property: name
 
     firewalls:
         dev:
@@ -23,13 +28,15 @@ security:
             security: false
 
         secured_area:
-            pattern:    ^/demo/secured/
+            pattern:    ^/
+            anonymous: ~
             form_login:
-                check_path: _security_check
-                login_path: _demo_login
+                login_path: login
+                check_path: login_check
+                default_target_path: nf_commerce_dashboard
             logout:
-                path:   _demo_logout
-                target: _demo
+                path:   logout
+                target: login
             #anonymous: ~
             #http_basic:
             #    realm: "Secured Demo Area"
