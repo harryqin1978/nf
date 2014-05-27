@@ -2,8 +2,10 @@ security:
     encoders:
         Symfony\Component\Security\Core\User\User: plaintext
         NF\UserBundle\Entity\User:
-            algorithm:        plaintext
-            iterations:       1
+            # algorithm: plaintext
+            # iterations: 1
+            algorithm: bcrypt
+            cost: 12
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER

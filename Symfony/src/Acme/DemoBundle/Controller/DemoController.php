@@ -51,9 +51,16 @@ class DemoController extends Controller
         // $em->persist($order);
         // $em->flush();
 
+        $factory = $this->get('security.encoder_factory');
+        $user = new User();
+
+        $encoder = $factory->getEncoder($user);
+        $password = $encoder->encodePassword('b', $user->getSalt());
+
         return array(
             // 'page_title' => 'Demo hello ' . $user->getId() . ' ' . $order->getId(),
-            'page_title' => 'Demo hello',
+            'page_title' => 'Demo hello: [' . $password . ']',
+            // 'page_title' => 'Demo hello',
             'name' => $name
         );
     }
