@@ -1,0 +1,13 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+  <link href="{{ asset('css/login-layout.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div> <!-- /container -->
+
+{% endblock %}

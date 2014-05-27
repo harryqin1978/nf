@@ -1,23 +1,24 @@
-{% extends '::base.html.twig' %}
+{% extends '::login-layout.html.twig' %}
 
-{% block body %}
+{% block content %}
+
+  <form action="{{ path('login_check') }}" method="post">
     {% if error %}
-        <div>{{ error.message }}</div>
+      <div class="error_message">{{ error.message }}</div>
     {% endif %}
+    <h2 class="form-signin-heading">{{ page_title }}</h2>
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Username" required autofocus />
 
-    <form action="{{ path('login_check') }}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="_username" value="{{ last_username }}" />
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required />
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="_password" />
+    {#
+      If you want to control the URL the user
+      is redirected to on success (more details below)
+      <input type="hidden" name="_target_path" value="/account" />
+    #}
 
-        {#
-            If you want to control the URL the user
-            is redirected to on success (more details below)
-            <input type="hidden" name="_target_path" value="/account" />
-        #}
-
-        <button type="submit">login</button>
-    </form>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">login</button>
+  </form>
 {% endblock %}
