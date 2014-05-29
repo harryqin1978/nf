@@ -3,13 +3,13 @@ namespace NF\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="nf_user")
  */
-class User implements UserInterface, \Serializable
+class User implements AdvancedUserInterface, \Serializable
 {
     /**
      * @ORM\OneToMany(targetEntity="\NF\CommerceBundle\Entity\Order", mappedBy="user")
@@ -122,6 +122,26 @@ class User implements UserInterface, \Serializable
         ) = unserialize($serialized);
     }
 
+    public function isAccountNonExpired()
+    {
+        return true;
+    }
+
+    public function isAccountNonLocked()
+    {
+        return true;
+    }
+
+    public function isCredentialsNonExpired()
+    {
+        return true;
+    }
+
+    public function isEnabled()
+    {
+        return $this->isActive;
+    }
+    
     /**
      * Get id
      *
