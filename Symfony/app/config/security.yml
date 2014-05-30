@@ -18,7 +18,7 @@ security:
         db_user:
             entity:
                 class: NF\UserBundle\Entity\User
-                property: name
+                # property: name
 
     firewalls:
         dev:
