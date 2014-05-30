@@ -17,6 +17,12 @@ class User implements AdvancedUserInterface, \Serializable
     protected $orders;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Role", inversedBy="users")
+     * @ORM\JoinTable(name="nf_user_role")
+     */
+    private $roles;
+
+    /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
@@ -50,6 +56,7 @@ class User implements AdvancedUserInterface, \Serializable
         // $this->salt = md5(uniqid(null, true));
 
         $this->orders = new ArrayCollection();
+        $this->roles = new ArrayCollection();
     }
     
     /**
@@ -84,7 +91,7 @@ class User implements AdvancedUserInterface, \Serializable
      */
     public function getRoles()
     {
-        return array('ROLE_USER');
+        return $this->roles->toArray();
     }
 
     /**
@@ -277,6 +284,26 @@ class User implements AdvancedUserInterface, \Serializable
         return $this->orders;
     }
 
+    /**
+     * Add roles
+     *
+     * @param \NF\UserBundle\Entity\Role $roles
+     * @return User
+     */
+    public function addRole(\NF\UserBundle\Entity\Role $roles)
+    {
+        $this->roles[] = $roles;
 
+        return $this;
+    }
 
+    /**
+     * Remove roles
+     *
+     * @param \NF\UserBundle\Entity\Role $roles
+     */
+    public function removeRole(\NF\UserBundle\Entity\Role $roles)
+    {
+        $this->roles->removeElement($roles);
+    }
 }

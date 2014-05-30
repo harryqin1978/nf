@@ -45,3 +45,4 @@ security:
 
     access_control:
         - { path: ^/commerce, roles: ROLE_USER }
+        - { path: ^/demo, roles: ROLE_ADMIN }
