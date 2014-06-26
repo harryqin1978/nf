@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>Username or email</source>
+                <target>用户名或电子邮件地址</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>Password</source>
+                <target>密码</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>Log in</source>
+                <target>登录</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>Log out</source>
+                <target>注销</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>User login</source>
+                <target>用户登录</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

@@ -7,7 +7,9 @@
 {% block body %}
 
   <div class="container">
+    {{ include('::language-switcher.html.twig') }}
     {% block content %}{% endblock %}
   </div> <!-- /container -->
+
 
 {% endblock %}

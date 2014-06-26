@@ -1,0 +1,14 @@
+parameters:
+#    nf_system.example.class: NF\SystemBundle\Example
+   nf_system.locale_listener.class: NF\SystemBundle\EventListener\LocaleListener
+
+services:
+#    nf_system.example:
+#        class: %nf_system.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    nf_system.locale_listener:
+        class: %nf_system.locale_listener.class%
+        arguments: ["%kernel.default_locale%"]
+        tags:
+            - { name: kernel.event_subscriber }

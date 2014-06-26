@@ -6,12 +6,12 @@
     {% if error %}
       <div class="error_message">{{ error.message }}</div>
     {% endif %}
-    <h2 class="form-signin-heading">{{ page_title }}</h2>
-    <label for="username">Username or email:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="Username" required autofocus />
+    <h2 class="form-signin-heading">{{ page_title|trans }}</h2>
+    <label for="username">{% trans %}Username or email{% endtrans %}:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="{% trans %}Username or email{% endtrans %}" required autofocus />
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="_password" class="form-control" placeholder="Password" required />
+    <label for="password">{% trans %}Password{% endtrans %}:</label>
+    <input type="password" id="password" name="_password" class="form-control" placeholder="{% trans %}Password{% endtrans %}" required />
 
     {#
       If you want to control the URL the user
@@ -19,6 +19,6 @@
       <input type="hidden" name="_target_path" value="/account" />
     #}
 
-    <button type="submit" class="btn btn-lg btn-primary btn-block">login</button>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans %}Log in{% endtrans %}</button>
   </form>
 {% endblock %}
