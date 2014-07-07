@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>nf.menu.label.home</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>nf.menu.label.demo</source>
+                <target>Demo</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>nf.menu.label.commerce</source>
+                <target>Commerce</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>nf.menu.label.dashboard</source>
+                <target>Dashboard</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

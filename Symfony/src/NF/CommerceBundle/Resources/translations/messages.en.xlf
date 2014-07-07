@@ -4,11 +4,11 @@
         <body>
             <trans-unit id="1">
                 <source>nf.commerce.page.title.dashboard</source>
-                <target>总览</target>
+                <target>Dashboard</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>nf.commerce.content.say_hello</source>
-                <target>你好！</target>
+                <target>Hello!</target>
             </trans-unit>
         </body>
     </file>

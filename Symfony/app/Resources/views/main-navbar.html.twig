@@ -12,14 +12,14 @@
     </div>
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
+        <li><a href="#">{{ 'nf.menu.label.home'|trans }}</a></li>
         {% if env_name == 'dev' %}
-          <li{% if route_name == '_demo_hello' %} class="active"{% endif %}><a href="{{ path('_demo_hello', {name: '123'}) }}">Demo</a></li>
+          <li{% if route_name == '_demo_hello' %} class="active"{% endif %}><a href="{{ path('_demo_hello', {name: '123'}) }}">{{ 'nf.menu.label.demo'|trans }}</a></li>
         {% endif %}
         <li{% if route_name starts with 'nf_commerce' %} class="active"{% endif %} class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Commerce <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ 'nf.menu.label.commerce'|trans }} <b class="caret"></b></a>
           <ul class="dropdown-menu">
-            <li{% if route_name == 'nf_commerce_dashboard' %} class="active"{% endif %}><a href="{{ path('nf_commerce_dashboard') }}">Dashboard</a></li>
+            <li{% if route_name == 'nf_commerce_dashboard' %} class="active"{% endif %}><a href="{{ path('nf_commerce_dashboard') }}">{{ 'nf.menu.label.dashboard'|trans }}</a></li>
             <li><a href="#">Another action</a></li>
             <li><a href="#">Something else here</a></li>
             <li class="divider"></li>

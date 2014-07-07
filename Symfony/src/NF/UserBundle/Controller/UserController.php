@@ -31,7 +31,7 @@ class UserController extends Controller
             // last username entered by the user
             'last_username' => $session->get(SecurityContextInterface::LAST_USERNAME),
             'error'         => $error,
-            'page_title'    => 'User login'
+            'page_title'    => 'nf.user.page.title.user_login'
         );
     }
 

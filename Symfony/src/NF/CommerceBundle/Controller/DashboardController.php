@@ -15,7 +15,7 @@ class DashboardController extends Controller
     public function indexAction()
     {
         return array(
-            'page_title' => 'Dashboard'
+            'page_title' => 'nf.commerce.page.title.dashboard'
         );
     }
 

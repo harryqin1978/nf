@@ -7,11 +7,11 @@
       <div class="error_message">{{ error.message }}</div>
     {% endif %}
     <h2 class="form-signin-heading">{{ page_title|trans }}</h2>
-    <label for="username">{% trans %}Username or email{% endtrans %}:</label>
-    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="{% trans %}Username or email{% endtrans %}" required autofocus />
+    <label for="username">{% trans %}nf.user.form.label.username_or_email{% endtrans %}:</label>
+    <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" placeholder="{% trans %}nf.user.form.label.username_or_email{% endtrans %}" required autofocus />
 
-    <label for="password">{% trans %}Password{% endtrans %}:</label>
-    <input type="password" id="password" name="_password" class="form-control" placeholder="{% trans %}Password{% endtrans %}" required />
+    <label for="password">{% trans %}nf.user.form.label.password{% endtrans %}:</label>
+    <input type="password" id="password" name="_password" class="form-control" placeholder="{% trans %}nf.user.form.label.password{% endtrans %}" required />
 
     {#
       If you want to control the URL the user
@@ -19,6 +19,6 @@
       <input type="hidden" name="_target_path" value="/account" />
     #}
 
-    <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans %}Log in{% endtrans %}</button>
+    <button type="submit" class="btn btn-lg btn-primary btn-block">{% trans %}nf.user.form.label.log_in{% endtrans %}</button>
   </form>
 {% endblock %}

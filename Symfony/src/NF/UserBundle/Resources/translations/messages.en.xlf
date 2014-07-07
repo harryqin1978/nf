@@ -4,23 +4,23 @@
         <body>
             <trans-unit id="1">
                 <source>nf.user.form.label.username_or_email</source>
-                <target>用户名或电子邮件地址</target>
+                <target>Username or email</target>
             </trans-unit>
             <trans-unit id="2">
                 <source>nf.user.form.label.password</source>
-                <target>密码</target>
+                <target>Password</target>
             </trans-unit>
             <trans-unit id="3">
                 <source>nf.user.form.label.log_in</source>
-                <target>登录</target>
+                <target>Log in</target>
             </trans-unit>
             <trans-unit id="4">
                 <source>nf.user.form.label.log_out</source>
-                <target>注销</target>
+                <target>Log out</target>
             </trans-unit>
             <trans-unit id="5">
                 <source>nf.user.page.title.user_login</source>
-                <target>用户登录</target>
+                <target>User login</target>
             </trans-unit>
         </body>
     </file>
