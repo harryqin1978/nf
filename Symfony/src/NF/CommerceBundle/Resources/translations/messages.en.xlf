@@ -10,6 +10,10 @@
                 <source>nf.commerce.content.say_hello</source>
                 <target>Hello!</target>
             </trans-unit>
+            <trans-unit id="3">
+                <source>nf.commerce.page.title.orders</source>
+                <target>Orders</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

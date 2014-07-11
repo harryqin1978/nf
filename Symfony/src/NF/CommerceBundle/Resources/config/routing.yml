@@ -5,3 +5,7 @@
 nf_commerce_dashboard:
     path:     /commerce/dashboard
     defaults: { _controller: NFCommerceBundle:Dashboard:index }
+
+nf_commerce_orders:
+    path:     /commerce/orders
+    defaults: { _controller: NFCommerceBundle:Order:index }

@@ -18,6 +18,10 @@
                 <source>nf.menu.label.dashboard</source>
                 <target>Dashboard</target>
             </trans-unit>
+            <trans-unit id="5">
+                <source>nf.menu.label.orders</source>
+                <target>Orders</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

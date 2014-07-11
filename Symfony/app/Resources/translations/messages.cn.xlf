@@ -18,6 +18,10 @@
                 <source>nf.menu.label.dashboard</source>
                 <target>总览</target>
             </trans-unit>
+            <trans-unit id="5">
+                <source>nf.menu.label.orders</source>
+                <target>订单</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

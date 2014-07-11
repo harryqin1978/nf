@@ -10,6 +10,10 @@
                 <source>nf.commerce.content.say_hello</source>
                 <target>你好！</target>
             </trans-unit>
+            <trans-unit id="3">
+                <source>nf.commerce.page.title.orders</source>
+                <target>订单</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

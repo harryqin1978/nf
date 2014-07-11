@@ -11,7 +11,7 @@ class Order
 {
     /**
      * @ORM\ManyToOne(targetEntity="\NF\UserBundle\Entity\User", inversedBy="orders")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=false)
      */
     protected $user;
 
