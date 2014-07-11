@@ -22,6 +22,38 @@
                 <source>nf.menu.label.orders</source>
                 <target>订单</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>nf.label.id</source>
+                <target>编号</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>nf.label.author</source>
+                <target>作者</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>nf.label.actions</source>
+                <target>操作</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>nf.pagination.first</source>
+                <target>首页</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>nf.pagination.previous</source>
+                <target>上页</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>nf.pagination.next</source>
+                <target>下页</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>nf.pagination.last</source>
+                <target>尾页</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>nf.pagination.status</source>
+                <target>第%page_num%页，共%page_count%页</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

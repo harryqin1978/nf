@@ -2,6 +2,10 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+parameters:
+    nf_page_size: 2
+    nf_table_extra_classes: "table-striped table-hover table-condensed"
+
 framework:
     #esi:             ~
     translator:      { fallback: "%locale%" }
@@ -28,6 +32,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        nf_table_extra_classes: "%nf_table_extra_classes%"
 
 # Assetic Configuration
 assetic:

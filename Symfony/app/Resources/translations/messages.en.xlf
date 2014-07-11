@@ -22,6 +22,38 @@
                 <source>nf.menu.label.orders</source>
                 <target>Orders</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>nf.label.id</source>
+                <target>ID</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>nf.label.author</source>
+                <target>Author</target>
+            </trans-unit>
+            <trans-unit id="8">
+                <source>nf.label.actions</source>
+                <target>Actions</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>nf.pagination.first</source>
+                <target>First</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>nf.pagination.previous</source>
+                <target>Previous</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>nf.pagination.next</source>
+                <target>Next</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>nf.pagination.last</source>
+                <target>Last</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>nf.pagination.status</source>
+                <target>page %page_num% of %page_count%</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

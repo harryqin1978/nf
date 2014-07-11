@@ -14,6 +14,14 @@
                 <source>nf.commerce.page.title.orders</source>
                 <target>订单</target>
             </trans-unit>
+            <trans-unit id="4">
+                <source>nf.commerce.label.price</source>
+                <target>价格</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>nf.commerce.label.receive_name</source>
+                <target>收货人</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
