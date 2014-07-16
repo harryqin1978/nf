@@ -1,0 +1,20 @@
+nf:
+  menu:
+    label:
+      home: Home
+      demo: Demo
+      commerce: Commerce
+      dashboard: Dashboard
+      orders: Orders
+  label:
+    id: ID
+    author: Author
+    actions: Actions
+    new: New
+    save: Save
+  pagination:
+    first: First
+    previous: Previous
+    next: Next
+    last: Last
+    status: page %page_num% of %page_count%

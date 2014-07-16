@@ -1,0 +1,12 @@
+nf:
+  commerce:
+    page:
+      title:
+        dashboard: Dashboard
+        orders: Orders
+        create_new_order: Create new order
+    content:
+      say_hello: Hello!
+    label:
+      price: Price
+      receive_name: Receive name

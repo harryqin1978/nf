@@ -1,0 +1,11 @@
+nf:
+  user:
+    form:
+      label:
+        username_or_email: Username or email
+        password: Password
+        log_in: Log in
+        log_out: Log out
+    page:
+      title:
+        user_login: User login

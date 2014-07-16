@@ -1,0 +1,12 @@
+nf:
+  commerce:
+    page:
+      title:
+        dashboard: 总览
+        orders: 订单
+        create_new_order: 创建新订单
+    content:
+      say_hello: 你好！
+    label:
+      price: 价格
+      receive_name: 收货人

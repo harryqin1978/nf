@@ -1,0 +1,11 @@
+nf:
+  user:
+    form:
+      label:
+        username_or_email: 用户名或电子邮件地址
+        password: 密码
+        log_in: 登录
+        log_out: 注销
+    page:
+      title:
+        user_login: 用户登录

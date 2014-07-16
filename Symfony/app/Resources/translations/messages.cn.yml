@@ -1,0 +1,20 @@
+nf:
+  menu:
+    label:
+      home: 首页
+      demo: 演示
+      commerce: 商业
+      dashboard: 总览
+      orders: 订单
+  label:
+    id: 编号
+    author: 作者
+    actions: 操作
+    new: 新建
+    save: 保存
+  pagination:
+    first: 首页
+    previous: 上页
+    next: 下页
+    last: 尾页
+    status: 第%page_num%页，共%page_count%页
