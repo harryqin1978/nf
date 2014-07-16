@@ -54,6 +54,14 @@
                 <source>nf.pagination.status</source>
                 <target>第%page_num%页，共%page_count%页</target>
             </trans-unit>
+            <trans-unit id="14">
+                <source>nf.label.new</source>
+                <target>新建</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>nf.label.save</source>
+                <target>保存</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

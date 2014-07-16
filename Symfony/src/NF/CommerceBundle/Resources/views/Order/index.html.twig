@@ -2,9 +2,9 @@
 
 {% block content %}
 
-  {# <a href="{{ path('employee_new') }}" class="btn btn-primary btn-lg">
-      Create a new entry
-  </a> #}
+  <a href="{{ path('nf_commerce_order_new') }}" class="btn btn-primary btn-sm">
+      {{ 'nf.label.new'|trans }}
+  </a>
 
   <table class="records_list table {{ nf_table_extra_classes }}">
     <thead>

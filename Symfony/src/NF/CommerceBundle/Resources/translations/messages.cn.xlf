@@ -22,6 +22,10 @@
                 <source>nf.commerce.label.receive_name</source>
                 <target>收货人</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>nf.commerce.page.title.create_new_order</source>
+                <target>创建新订单</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

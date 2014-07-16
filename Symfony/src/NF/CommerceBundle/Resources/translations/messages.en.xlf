@@ -22,6 +22,10 @@
                 <source>nf.commerce.label.receive_name</source>
                 <target>Receive name</target>
             </trans-unit>
+            <trans-unit id="6">
+                <source>nf.commerce.page.title.create_new_order</source>
+                <target>Create new order</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
