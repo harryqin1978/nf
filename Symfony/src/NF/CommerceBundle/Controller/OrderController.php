@@ -50,15 +50,31 @@ class OrderController extends Controller
      */
     public function newAction(Request $request)
     {
-        // create a task and give it some dummy data for this example
-        $task = new Order();
-        $task->setPrice(0);
+        
+        $entity = new Order();
+        // $entity->setPrice(0);
 
-        $form = $this->createFormBuilder($task)
+        $form = $this->createFormBuilder($entity)
             ->add('price', 'text', array('label' => 'nf.commerce.label.price'))
             ->add('receiveName', 'text', array('label' => 'nf.commerce.label.receive_name'))
-            ->add('save', 'submit', array('label' => 'nf.label.save'))
+            ->add('save', 'submit', array('label' => 'nf.label.save', 'attr' => array('data-button-position' => 'first')))
+            ->add('saveAndAdd', 'submit', array('label' => 'nf.label.save_and_add'))
+            ->add('back', 'button', array('label' => 'nf.label.back', 'attr' => array('data-button-position' => 'last', 'onclick' => 'window.location.href=\'' . $this->generateUrl('nf_commerce_orders') . '\'')))
             ->getForm();
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            // $entity = $form->getData();
+            $entity->setUser($this->getUser());
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            $redirect_route = $form->get('saveAndAdd')->isClicked() ? 'nf_commerce_order_new' : 'nf_commerce_orders';
+
+            return $this->redirect($this->generateUrl($redirect_route));
+        }
 
         return array(
             'page_title' => 'nf.commerce.page.title.create_new_order',

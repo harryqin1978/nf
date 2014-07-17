@@ -12,6 +12,8 @@ nf:
     actions: 操作
     new: 新建
     save: 保存
+    save_and_add: 保存并新建
+    back: 返回
   pagination:
     first: 首页
     previous: 上页

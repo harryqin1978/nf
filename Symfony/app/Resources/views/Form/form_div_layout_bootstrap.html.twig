@@ -32,3 +32,13 @@
     {%- endif -%}
     <button class="btn btn-primary" type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ label|trans({}, translation_domain) }}</button>
 {%- endblock button_widget %}
+
+{% block button_row -%}
+    {% if attr['data-button-position'] is defined and attr['data-button-position'] == 'first' %}
+        <div class="buttons">
+    {% endif %}
+        <span>{{- form_widget(form) -}}</span>
+    {% if attr['data-button-position'] is defined and attr['data-button-position'] == 'last' %}
+        </div>
+    {% endif %}
+{%- endblock button_row %}

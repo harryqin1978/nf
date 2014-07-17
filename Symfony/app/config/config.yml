@@ -3,7 +3,7 @@ imports:
     - { resource: security.yml }
 
 parameters:
-    nf_page_size: 2
+    nf_page_size: 5
     nf_table_extra_classes: "table-striped table-hover table-condensed"
 
 framework:

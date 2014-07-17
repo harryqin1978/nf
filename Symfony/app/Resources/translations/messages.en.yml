@@ -12,6 +12,8 @@ nf:
     actions: Actions
     new: New
     save: Save
+    save_and_add: Save and add
+    back: Back
   pagination:
     first: First
     previous: Previous

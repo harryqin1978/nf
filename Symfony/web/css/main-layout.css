@@ -8,3 +8,7 @@ h1#page-title {
   color: #900;
   margin-bottom: 15px;
 }
+
+form .buttons span {
+  margin-right: 10px;
+}
