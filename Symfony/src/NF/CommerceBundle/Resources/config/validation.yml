@@ -1,0 +1,8 @@
+NF\CommerceBundle\Entity\Order:
+    properties:
+        receiveName:
+            - NotBlank: ~
+        price:
+            - Regex: 
+                pattern: "/^\d+\.{0,1}\d*$/"
+                message: Price must be a float number.

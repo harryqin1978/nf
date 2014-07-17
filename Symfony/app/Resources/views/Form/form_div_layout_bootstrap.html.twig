@@ -13,7 +13,7 @@
 
 {% block form_row %}
 {% spaceless %}
-  <div class="form-group">
+    <div class="form-group{% if errors|length > 0 %} has-error{% endif %}">
         <div class="col-sm-3">{{ form_label(form) }}</div>
         <div class="col-sm-9">{{ form_widget(form) }}</div>
         {{ form_errors(form) }}
@@ -42,3 +42,13 @@
         </div>
     {% endif %}
 {%- endblock button_row %}
+
+{% block form_errors -%}
+    {% if errors|length > 0 -%}
+    <span class="label label-danger pull-right form-error">
+            {%- for error in errors -%}
+               {{ error.message }}<br />
+            {%- endfor -%}
+    </span>
+    {%- endif %}
+{%- endblock form_errors %}
