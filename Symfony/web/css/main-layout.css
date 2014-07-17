@@ -18,3 +18,7 @@ form span.form-error {
   margin-right: 15px;
   margin-top: 5px;
 }
+
+ul.pagination {
+  margin: 0;
+}

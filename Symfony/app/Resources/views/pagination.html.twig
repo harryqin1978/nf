@@ -1,12 +1,7 @@
-<div class="pagination">
-  <ul>
+  <ul class="pagination">
     {% if page_num > 1 %}<li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge(app.request.query.all)|merge({page : 1})) }}">{{ 'nf.pagination.first'|trans }}</a></li>{% endif %}
     {% if page_num > 1 %}<li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge(app.request.query.all)|merge({page : page_num - 1})) }}">{{ 'nf.pagination.previous'|trans }}</a></li>{% endif %}
     {% if page_num < page_count %}<li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge(app.request.query.all)|merge({page : page_num + 1})) }}">{{ 'nf.pagination.next'|trans }}</a></li>{% endif %}
     {% if page_num < page_count %}<li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge(app.request.query.all)|merge({page : page_count})) }}">{{ 'nf.pagination.last'|trans }}</a></li>{% endif %}
-    <li>
-      {% trans with {'%page_num%': page_num, '%page_count%': page_count} %}nf.pagination.status{% endtrans %}
-{#       page {{ page_num }} of {{ page_count }}
- #}    </li>
   </ul>
-</div>
+  <div>{% trans with {'%page_num%': page_num, '%page_count%': page_count} %}nf.pagination.status{% endtrans %}</div>
