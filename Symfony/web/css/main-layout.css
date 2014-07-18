@@ -13,7 +13,7 @@ form .buttons span {
   margin-right: 10px;
 }
 
-form span.form-error {
+form .form-group span.error-message {
   clear: both;
   margin-right: 15px;
   margin-top: 5px;
