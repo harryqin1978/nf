@@ -5,4 +5,4 @@ NF\CommerceBundle\Entity\Order:
         price:
             - Regex: 
                 pattern: "/^\d+\.{0,1}\d*$/"
-                message: Price must be a float number.
+                message: "nf.commerce.error.price.notfloat"

@@ -1,0 +1,5 @@
+nf:
+  commerce:
+    error:
+      price:
+        notfloat: 价格必须为实数。

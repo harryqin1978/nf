@@ -1,0 +1,5 @@
+nf:
+  commerce:
+    error:
+      price:
+        notfloat: Price must be a float number.
