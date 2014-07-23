@@ -14,9 +14,13 @@ nf:
     save: 保存
     save_and_add: 保存并新建
     back: 返回
+    edit: 编辑
+    delete: 删除
   pagination:
     first: 首页
     previous: 上页
     next: 下页
     last: 尾页
     status: 第%page_num%页，共%page_count%页
+  message:
+    really_delete: 确定要删除吗？

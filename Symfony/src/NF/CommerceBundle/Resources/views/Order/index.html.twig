@@ -2,9 +2,11 @@
 
 {% block content %}
 
+  {% if is_granted('ROLE_USER') %}
   <a href="{{ path('nf_commerce_order_new') }}" class="btn btn-primary btn-sm">
       {{ 'nf.label.new'|trans }}
   </a>
+  {% endif %}
 
   <table class="records_list table {{ nf_table_extra_classes }}">
     <thead>
@@ -24,9 +26,11 @@
         <td>{{ entity.receiveName }}</td>
         <td>{{ entity.user.name }}</td>
         <td>
-          <div class="btn-group">
-            {# <a href="{{ path('employee_show', { 'id': entity.id }) }}" class="btn btn-alt btn-primary" title="Show" alt="Show"><span class="awe-tasks"></span></a>
-            <a href="{{ path('employee_edit', { 'id': entity.id }) }}" class="btn btn-alt btn-primary" title="Edit" alt="Edit"><span class="awe-wrench"></span></a> #}
+          <div class="btn-group actions">
+            {% if app.user.username == entity.user.name or is_granted('ROLE_ADMIN') %}
+              <a href="{{ path('nf_commerce_order_edit', { 'id': entity.id }) }}" class="btn btn-alt btn-primary btn-xs" title="{{ 'nf.label.edit'|trans }}" alt="{{ 'nf.label.edit'|trans }}">{{ 'nf.label.edit'|trans }}</a>
+              <a href="{{ path('nf_commerce_order_delete', { 'id': entity.id }) }}" class="btn btn-alt btn-primary btn-xs" title="{{ 'nf.label.delete'|trans }}" alt="{{ 'nf.label.delete'|trans }}" onclick="if(!confirm('{{'nf.message.really_delete'|trans}}')) {return false;}">{{ 'nf.label.delete'|trans }}</a>
+            {% endif %}
           </div>
         </td>
       </tr>

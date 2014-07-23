@@ -5,6 +5,7 @@ nf:
         dashboard: Dashboard
         orders: Orders
         create_new_order: Create new order
+        edit_order: Edit order
     content:
       say_hello: Hello!
     label:

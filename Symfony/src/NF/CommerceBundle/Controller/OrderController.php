@@ -5,7 +5,7 @@ namespace NF\CommerceBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use NF\CommerceBundle\Entity\Order;
 use Symfony\Component\HttpFoundation\Request;
-
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class OrderController extends Controller
@@ -50,22 +50,18 @@ class OrderController extends Controller
      */
     public function newAction(Request $request)
     {
-        
-        $entity = new Order();
-        // $entity->setPrice(0);
 
-        $form = $this->createFormBuilder($entity)
-            ->add('price', 'text', array('label' => 'nf.commerce.label.price'))
-            ->add('receiveName', 'text', array('label' => 'nf.commerce.label.receive_name'))
-            ->add('save', 'submit', array('label' => 'nf.label.save', 'attr' => array('data-button-position' => 'first')))
-            ->add('saveAndAdd', 'submit', array('label' => 'nf.label.save_and_add'))
-            ->add('back', 'button', array('label' => 'nf.label.back', 'attr' => array('data-button-position' => 'last', 'onclick' => 'window.location.href=\'' . $this->generateUrl('nf_commerce_orders') . '\'')))
-            ->getForm();
+        if (!$this->get('security.context')->isGranted('ROLE_USER')) {
+            throw new AccessDeniedException();
+        }
+
+        $entity = new Order();
+
+        $form = $this->makeForm($entity, 'new');
 
         $form->handleRequest($request);
 
         if ($form->isValid()) {
-            // $entity = $form->getData();
             $entity->setUser($this->getUser());
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -80,6 +76,66 @@ class OrderController extends Controller
             'page_title' => 'nf.commerce.page.title.create_new_order',
             'form' => $form->createView(),
         );
+    }
+
+    /**
+     * @Template()
+     */
+    public function editAction(Request $request, $id)
+    {
+
+        $entity = $this->getDoctrine()->getRepository('NFCommerceBundle:Order')->find($id);
+        $this->checkAccess($entity);
+
+        $form = $this->makeForm($entity, 'edit');
+
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($entity);
+            $em->flush();
+
+            $redirect_route = 'nf_commerce_orders';
+
+            return $this->redirect($this->generateUrl($redirect_route));
+        }
+
+        return array(
+            'page_title' => 'nf.commerce.page.title.edit_order',
+            'form' => $form->createView(),
+        );
+
+    }
+
+    protected function makeForm($entity, $action) {
+        $formBuilder = $this->createFormBuilder($entity);
+        $formBuilder->add('price', 'text', array('label' => 'nf.commerce.label.price'));
+        $formBuilder->add('receiveName', 'text', array('label' => 'nf.commerce.label.receive_name'));
+        $formBuilder->add('save', 'submit', array('label' => 'nf.label.save', 'attr' => array('data-button-position' => 'first')));
+        if ($action == 'new') {
+            $formBuilder->add('saveAndAdd', 'submit', array('label' => 'nf.label.save_and_add'));
+        }
+        $formBuilder->add('back', 'button', array('label' => 'nf.label.back', 'attr' => array('data-button-position' => 'last', 'onclick' => 'window.location.href=\'' . $this->generateUrl('nf_commerce_orders') . '\'')));
+        return $formBuilder->getForm();
+    }
+
+    public function deleteAction(Request $request, $id)
+    {
+        $entity = $this->getDoctrine()->getRepository('NFCommerceBundle:Order')->find($id);
+        $this->checkAccess($entity);
+
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($entity);
+        $em->flush();
+        $redirect_route = 'nf_commerce_orders';
+        return $this->redirect($this->generateUrl($redirect_route));
+    }
+
+    protected function checkAccess($entity) {
+        if ($entity->getUser()->getName() != $this->getUser()->getName() && !$this->get('security.context')->isGranted('ROLE_ADMIN')) {
+            throw new AccessDeniedException();
+        }
     }
 
 }

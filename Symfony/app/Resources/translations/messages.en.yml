@@ -14,9 +14,13 @@ nf:
     save: Save
     save_and_add: Save and add
     back: Back
+    edit: Edit
+    delete: Delete
   pagination:
     first: First
     previous: Previous
     next: Next
     last: Last
     status: page %page_num% of %page_count%
+  message:
+    really_delete: Do you really confirm delete?

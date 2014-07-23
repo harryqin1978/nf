@@ -5,6 +5,7 @@ nf:
         dashboard: 总览
         orders: 订单
         create_new_order: 创建新订单
+        edit_order: 编辑订单
     content:
       say_hello: 你好！
     label:

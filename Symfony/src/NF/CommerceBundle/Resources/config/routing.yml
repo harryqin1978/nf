@@ -11,5 +11,13 @@ nf_commerce_orders:
     defaults: { _controller: NFCommerceBundle:Order:index }
 
 nf_commerce_order_new:
-    path:     /commerce/orders/new
+    path:     /commerce/order/new
     defaults: { _controller: NFCommerceBundle:Order:new }
+
+nf_commerce_order_edit:
+    path:     /commerce/order/{id}/edit
+    defaults: { _controller: NFCommerceBundle:Order:edit }
+
+nf_commerce_order_delete:
+    path:     /commerce/order/{id}/delete
+    defaults: { _controller: NFCommerceBundle:Order:delete }
