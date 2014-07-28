@@ -8,6 +8,7 @@ security:
             cost: 12
 
     role_hierarchy:
+        ROLE_USER:        ROLE_GUEST
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
@@ -44,5 +45,6 @@ security:
             #    realm: "Secured Demo Area"
 
     access_control:
-        - { path: ^/commerce, roles: ROLE_USER }
+        - { path: ^/commerce, roles: ROLE_GUEST }
+        - { path: ^/commerce/order/, roles: ROLE_USER }
         - { path: ^/demo, roles: ROLE_ADMIN }
